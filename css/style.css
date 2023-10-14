@@ -41,11 +41,10 @@ h1 {
 .circle:hover {
     cursor: pointer;
     outline: solid 2px rgb(110, 190, 216);
-    opacity: 90%;
     
 }
 
 .circle:active {
     transition: none;
-    opacity: 80%;
+    opacity: 85%;
 }

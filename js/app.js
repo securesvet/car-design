@@ -8,6 +8,7 @@ colorOptions.forEach(element => {
             selectedElement.style.outline = element.style.outline;
         }
         selectedElement = element;
+        selectedElement.style.transition = "outline 100ms ease";
         selectedElement.style.outline = "solid 3px blue";
     })
 });
