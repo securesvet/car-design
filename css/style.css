@@ -9,17 +9,43 @@ h1 {
     text-align: center;
 }
 
-.img-container {
-    position: relative;
-
+.grid-wrapper {
+    display: grid;
 }
 
-img {
-    position: absolute;
-    width: 500px;
-    height: 350px;
-    object-fit: cover;
-    transform: translate(-50%, -50%);
-    top: 50vh;
-    left: 50vw;
+.circle {
+    outline: solid 2px lightblue;
+    width: 75px;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    transition: outline, opacity 250ms ease-in;
+}
+
+.color-option {
+    display: flex;
+    gap: 1rem;
+}
+
+.blue {
+    background-color: rgb(40, 194, 255);
+}
+
+.white {
+    background-color: rgb(235, 235, 235);
+}
+
+.black {
+    background-color: rgb(22, 22, 22);
+}
+
+.circle:hover {
+    cursor: pointer;
+    outline: solid 2px rgb(110, 190, 216);
+    opacity: 90%;
+    
+}
+
+.circle:active {
+    transition: none;
+    opacity: 80%;
 }
