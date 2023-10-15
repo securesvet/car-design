@@ -1,8 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
 *,
 *::after,
 *::before {
     margin: 0;
     padding: 0;
+}
+
+body {
+    height: 100vh;
+    font-family: 'Lato', sans-serif;
 }
 
 h1 {
@@ -11,19 +18,22 @@ h1 {
 
 .grid-wrapper {
     display: grid;
+    grid-template-columns: 4fr 1fr;
 }
 
 .circle {
     outline: solid 2px lightblue;
-    width: 75px;
+    width: 3rem;
     aspect-ratio: 1 / 1;
     border-radius: 50%;
     transition: outline, opacity 250ms ease-in;
 }
 
 .color-option {
+    padding: 1.5rem;
     display: flex;
     gap: 1rem;
+    justify-content: center;
 }
 
 .blue {
@@ -47,4 +57,19 @@ h1 {
 .circle:active {
     transition: none;
     opacity: 85%;
+}
+
+.constructor {
+    background: #ddd;   
+    height: 500vh;
+}
+
+.constructor > p {
+    font-size: 2rem;
+    text-align: center;
+}
+.wrapper-constructor {
+    height: 100vh;
+    width: 1fr;
+    overflow: auto;
 }
