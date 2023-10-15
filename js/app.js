@@ -1,6 +1,8 @@
 colorOptions = document.querySelectorAll('.circle')
 console.log(colorOptions)
 
+
+// Implementing selecting color option 
 let selectedElement; 
 colorOptions.forEach(element => {
     element.addEventListener('click', function() {
