@@ -10,6 +10,7 @@
 body {
     height: 100vh;
     font-family: 'Lato', sans-serif;
+    overflow: hidden;
 }
 
 .flex {
@@ -62,10 +63,10 @@ body {
 }
 
 .constructor {
-    background: #ffffff;   
-    height: 500vh;
+    background: rgb(233, 233, 233);   
     margin-top: 10vh;
     padding-inline-end: 1rem;
+    border-radius: 30px;
 }
 
 .constructor h1 {
@@ -77,7 +78,7 @@ body {
     text-align: center;
 }
 .wrapper-constructor {
-    height: 100vh;
+    height: 95vh;
     width: 1fr;
     overflow: scroll;
 }
@@ -91,6 +92,7 @@ body {
     justify-content: space-between;
     position: fixed;
     width: 100vw;
+    height: 8vh;
     background: hsl(0 0% 100% / 0.1);
     backdrop-filter: blur(1rem);
     z-index: 0;
@@ -121,4 +123,10 @@ body {
 
 .language-button:active {
     opacity: 75%;
+}
+
+.img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: scale-down;
 }
