@@ -68,10 +68,10 @@ body {
 
 .constructor {
     background: rgb(233, 233, 233);   
-    margin-top: 10vh;
+    margin-top: 75px;
     padding: 1rem;
     border-radius: 30px;
-    overflow-x: none;
+    overflow-x: hidden;
 }
 
 .constructor h1 {
@@ -97,21 +97,17 @@ body {
     justify-content: space-between;
     position: fixed;
     width: 100vw;
-    height: 8vh;
+    height: 75px;
     background: hsl(0 0% 100% / 0.1);
     backdrop-filter: blur(1rem);
     z-index: 0;
     overflow: hidden;
 }
 
-.primary-header > a {
-    margin: 1rem;
-    height: inherit;
-}
-
 .primary-header > a > img {
-    height: inherit;
-    aspect-ratio: 1 / 1;
+    margin: 1rem;
+    width: 75px;
+    height: 75px;
 }
 
 .primary-navigation {
@@ -144,4 +140,9 @@ body {
     width: 100%;
     height: 100%;
     object-fit: scale-down;
+    transform: scale(0.75, 0.75);
+}
+
+.car-image {
+    
 }
