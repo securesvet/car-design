@@ -1,11 +1,9 @@
-colorOptions = document.querySelectorAll('.circle')
+    colorOptions = document.querySelectorAll('.circle')
 console.log(colorOptions)
 
 
 // Implementing selecting color option 
-console.log(colorOptions)
 let selectedElementByDefault = colorOptions[0];
-console.log(colorOptions);
 
 function selectElement(element) {
     element.classList.add('selected-option');

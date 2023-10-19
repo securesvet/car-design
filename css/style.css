@@ -71,6 +71,7 @@ body {
     margin-top: 10vh;
     padding: 1rem;
     border-radius: 30px;
+    overflow-x: none;
 }
 
 .constructor h1 {
@@ -103,6 +104,16 @@ body {
     overflow: hidden;
 }
 
+.primary-header > a {
+    margin: 1rem;
+    height: inherit;
+}
+
+.primary-header > a > img {
+    height: inherit;
+    aspect-ratio: 1 / 1;
+}
+
 .primary-navigation {
     list-style: none;
     padding: 0;
@@ -129,7 +140,7 @@ body {
     opacity: 75%;
 }
 
-.img-container img {
+.img-container > img {
     width: 100%;
     height: 100%;
     object-fit: scale-down;
