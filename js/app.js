@@ -1,7 +1,7 @@
-    colorOptions = document.querySelectorAll('.circle')
-console.log(colorOptions)
+const colorOptions = document.querySelectorAll('.circle');
+const carImage = document.querySelector('.car-image')
 
-
+console.log()
 // Implementing selecting color option 
 let selectedElementByDefault = colorOptions[0];
 
@@ -14,13 +14,21 @@ function deselectElement(element) {
 }
 
 let selectedElement = selectedElementByDefault;
-
+let indexToColor = {0: 'black', 1: 'white', 2: 'blue'};
+const stringForCarImagePath = 'img/cars/car_';
 colorOptions.forEach(element => {
     element.addEventListener('click', function() {
-        if (selectedElement) {
+        if (selectedElement != element) {
             deselectElement(selectedElement);
+            selectElement(element);
+            carImage.style.transition = "opacity 500ms ease";
+            carImage.style.opacity = "0%";
+            carImage.addEventListener('webkitTransitionEnd', function() { 
+                carImage.src = stringForCarImagePath.concat(element.classList[0], '.png');
+                carImage.style.opacity = "100%";
+           }, false );
+            
+            selectedElement = element;
         }
-        selectElement(element);
-        selectedElement = element;
     })
 });
