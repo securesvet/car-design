@@ -143,6 +143,16 @@ body {
     transform: scale(0.75, 0.75);
 }
 
-.car-image {
-    
+.constructor-block p {
+    font-size: 20px;
+    text-align: center;
+}
+
+.constructor-block h1 {
+    font-size: 30px;
+}
+
+.constructor-block {
+    margin-top: 1rem;
+    margin-bottom: 10rem;
 }
