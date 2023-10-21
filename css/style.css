@@ -240,10 +240,39 @@ body {
     opacity: 0.9;
 }
 
+.order-details > ul > li{
+    margin-bottom: 5rem;
+}
+
+.modal-window h1 {
+    font-size: 2.5rem;
+    margin-bottom: 5rem;
+}
+
+.order-details {
+    text-align: center;
+}
+
 .order-details > ul {
     list-style: none;
 }
 
 .order-details > ul > li {
-    font-size: 1.5rem;
+    font-size: 2rem;
+}
+
+.order-details > ul > li > input {
+    font-size: 2rem;
+    padding-left: 0.5rem;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.submit-order-btn {
+    font-size: 2rem;
+    text-decoration: none;
+    padding: 1rem;
+    color: black;
+    background: #bbb;
+    border-radius: 10px;
 }
