@@ -51,3 +51,26 @@ colorOptions.forEach(element => {
         selectedElement = element;
     })
 });
+
+
+// Closing + opening modal windows
+
+const modal = document.querySelector('.modal');
+
+const closeButton = document.querySelector('.close-button');
+
+const openModalWindowButton = document.querySelector('.order-button');
+
+openModalWindowButton.onclick = function () {
+    modal.style.display = "flex";
+}
+
+closeButton.onclick = function () {
+    modal.style.display = "none";
+}
+
+window.onclick = function(e) {
+    if (e.target == modal) {
+        modal.style.display = "none";
+    }
+}

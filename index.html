@@ -8,11 +8,7 @@
     <title>Design Your Car</title>
 </head>
 <body>
-    <div class="darken">
-        <div class="window-pop">
-            <a href="#" class="close-button"></a>
-        </div>
-    </div>
+
     <header class="primary-header flex">
         <a href="#">
             <img src="img/logo_gaz_black_rus.jpg" alt="Logo">
@@ -53,10 +49,29 @@
                     </div>
 
                     <div class="constructor-block">
-                        <a class="order-button flex" href="#darken">Place Order</a>
+                        <a class="order-button flex" href="#">Place Order</a>
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="modal flex">
+            <div class="modal-window">
+                <a href="#" class="close-button">x</a>
+                <h1>Your order details:</h1>
+                <div class="order-details">
+                    <ul>
+                        <li>Color: <span></span></li>
+                        <li>Wheels: <span></span></li>
+                        <li>Your address: <input type="text" placeholder="address"></li>
+                        <li>Your email: <input type="email" placeholder="example@example.com">
+                        </li>
+                    </ul>
+                    <a href="" class="submit-order-btn">Submit</a>
+                    
+
+                </div>
+            </div>
+            <div class="overlay"></div>
         </div>
     </section>
 </body>
