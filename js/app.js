@@ -1,19 +1,25 @@
 const colorOptions = document.querySelectorAll('.circle');
 const carImage = document.querySelector('.car-image')
 const colorDescriptionDisplay = document.querySelector('.color-description');
-
-
+const colorPriceDisplay = document.querySelector('.color-price');
+colorPriceDisplay.innerHTML = "Free";
 // Implementing selecting color option 
 let selectedElementByDefault = colorOptions[0];
-
+let totalPrice = 15000;
+let addedPrice = 0;
+let totalPriceToDisplay = totalPrice;
 // Set Description for color.
 const setColorDescription = (e) => {
     let colorDescriptions = {
-        'black': 'Space Black',
-        'white': 'Shiny White',
-        'blue': 'Blueish Blue'
+        'black': {name: 'Space Black', price: '0'},
+        'white': {name: 'Shiny White', price: '100'},
+        'blue': {name: 'Blueish Blue', price: '200'}
     };
-    colorDescriptionDisplay.innerHTML = `<b>${colorDescriptions[e.classList[0]]}</b>`; 
+    let currentColor = colorDescriptions[e.classList[0]];
+    colorDescriptionDisplay.innerHTML = `<b>${currentColor.name}</b>`;
+    colorPriceDisplay.innerHTML = `${(currentColor.price == '0') ? 'Free' : (currentColor.price + '$')}`
+    addedPrice = Number(currentColor.price);
+    totalPriceToDisplay = totalPrice + addedPrice;
 }
 
 function selectElement(element) {
@@ -61,8 +67,14 @@ const closeButton = document.querySelector('.close-button');
 
 const openModalWindowButton = document.querySelector('.order-button');
 
+const totalPriceDisplay = document.querySelector(".total-price");
+
+
+// Here we want to update our order info
 openModalWindowButton.onclick = function () {
     modal.style.display = "flex";
+    totalPriceDisplay.innerHTML = `<b>${totalPriceToDisplay}$</b>`;
+
 }
 
 closeButton.onclick = function () {
