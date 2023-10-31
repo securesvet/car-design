@@ -201,7 +201,6 @@ body {
     height: 100%;
     align-items: center;
     justify-content: center;
-    transition: display 500ms ease;
 }
 
 .modal .overlay {
