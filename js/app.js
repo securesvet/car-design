@@ -1,10 +1,14 @@
-const colorOptions = document.querySelectorAll('.circle');
+const colorOptions = Object.entries(document.querySelector('.color-option').children).map((el) => (el[1])) ;
+const wheelsOptions = Object.entries(document.querySelector('.wheels-option').children).map((el) => (el[1])) ;
 const carImage = document.querySelector('.car-image')
 const colorDescriptionDisplay = document.querySelector('.color-description');
 const colorPriceDisplay = document.querySelector('.color-price');
 colorPriceDisplay.innerHTML = "Free";
+
+
 // Implementing selecting color option 
-let selectedElementByDefault = colorOptions[0];
+let selectedColorElementByDefault = colorOptions[0];
+let selectedWheelsElement = wheelsOptions[0];
 let totalPrice = 15000;
 let addedPrice = 0;
 let totalPriceToDisplay = totalPrice;
@@ -32,30 +36,47 @@ function deselectElement(element) {
 }
 
 // Start Default setup
-let selectedElement = selectedElementByDefault;
+let selectedColorElement = selectedColorElementByDefault;
 
-setColorDescription(selectedElement);
+setColorDescription(selectedColorElement);
 
 // End of Default setup
+
+// Function for toggle selecting circles;
+function toggleSelect(element, elementSelected) {
+    if (elementSelected === element) return;
+    deselectElement(elementSelected);
+    selectElement(element);
+    elementSelected = element;
+}
 
 // let indexToColor = {0: 'black', 1: 'white', 2: 'blue'};
 const stringForCarImagePath = 'img/cars/car_';
 colorOptions.forEach(element => {
     element.addEventListener('click', function() {
-        if (selectedElement === element) return;
-        deselectElement(selectedElement);
-        selectElement(element);
         carImage.style.transition = "opacity 500ms ease";
         carImage.style.opacity = "0%";
         setColorDescription(element);
 
-        carImage.addEventListener('webkitTransitionEnd', function() { 
+        carImage.addEventListener('webkitTransitionEnd', function() {
             carImage.src = stringForCarImagePath.concat(element.classList[0], '.png');
             carImage.style.opacity = "100%";
 
         }, false );
 
-        selectedElement = element;
+        if (selectedColorElement === element) return;
+        deselectElement(selectedColorElement);
+        selectElement(element);
+        selectedColorElement = element;
+    })
+});
+
+wheelsOptions.forEach(element => {
+    element.addEventListener('click', function() {
+        if (selectedWheelsElement === element) return;
+        deselectElement(selectedWheelsElement);
+        selectElement(element);
+        selectedWheelsElement = element;
     })
 });
 
@@ -75,7 +96,7 @@ const colorPriceOrderDisplay = document.querySelector('.color-choice')
 openModalWindowButton.onclick = function () {
     modal.style.display = "flex";
     totalPriceDisplay.innerHTML = `<b>${totalPriceToDisplay}$</b>`;
-    colorPriceOrderDisplay.innerHTML = colorDescriptions[selectedElement.classList[0]].name;
+    colorPriceOrderDisplay.innerHTML = colorDescriptions[selectedColorElement.classList[0]].name;
 
 }
 
