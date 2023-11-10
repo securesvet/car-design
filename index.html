@@ -4,7 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <script defer src="js/app.js"></script>
+    <script defer src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=6ed08475-2d3f-4490-922e-3f09f74bd4b7" type="text/javascript"></script>
+    <script defer src="https://yandex.st/jquery/2.2.3/jquery.min.js" type="text/javascript"></script>
+
+    <script defer src="js/ya_suggest_map_api.js" type="text/javascript"></script>
+    <script defer src="js/input_address_validation.js" type="text/javascript"></script>
+    <script defer src="js/app.js" type="text/javascript"></script>
+
     <title>Design Your Car</title>
 </head>
 <body>
@@ -69,8 +75,12 @@
                     <ul>
                         <li>Color: <span class="color-choice"></span></li>
                         <li>Wheels: <span class="wheels-choice"></span></li>
-                        <li>Your adress: <input type="text" placeholder="adress"/></li>
-                        <li>Your email: <input type="email" placeholder="example@example.com"/>
+                        <li>Your adress: <input id="suggest" type="text" placeholder="Enter a place" /> <button class="check-location-btn">Check</button><br>
+                        <div class="suggest-wrapper">
+                            <p>You probably meant: <span class="suggest-location"></span></p>
+                        </div>
+                        </li>
+                        <li>Your email: <input type="email" placeholder="example@example.com" />
                         </li>
                         <li>Your total: <span class="total-price"></span></li>
                     </ul>
