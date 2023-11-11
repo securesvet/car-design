@@ -19,7 +19,7 @@ let addedColorPrice = 0;
 let totalPriceToDisplay = totalPrice;
 
 // Set Description for color.
-let colorDescriptions = {
+let colorDescription = {
     'black': {name: 'Space Black', price: '0'},
     'white': {name: 'Shiny White', price: '100'},
     'blue': {name: 'Blueish Blue', price: '200'}
@@ -40,10 +40,11 @@ const setWheelDescription = (e) => {
 }
 
 const setColorDescription = (e) => {
-    let currentColor = colorDescriptions[e.classList[0]];
+    let currentColor = colorDescription[e.classList[0]];
     colorDescriptionDisplay.innerHTML = `<b>${currentColor.name}</b>`;
     colorPriceDisplay.innerHTML = `${(currentColor.price == '0') ? 'Free' : (currentColor.price + '$')}`
     addedColorPrice = Number(currentColor.price);
+    addedPrice = addedColorPrice + addedWheelsPrice;
     totalPriceToDisplay = totalPrice + addedPrice;
 }
 
@@ -124,12 +125,15 @@ const openModalWindowButton = document.querySelector('.order-button');
 const totalPriceDisplay = document.querySelector('.total-price');
 
 const colorPriceOrderDisplay = document.querySelector('.color-choice')
+
+const wheelsPriceOrderDisplay = document.querySelector('.wheels-choice')
+
 // Here we want to update our order info
 openModalWindowButton.onclick = function () {
     modal.style.display = "flex";
     totalPriceDisplay.innerHTML = `<b>${totalPriceToDisplay}$</b>`;
-    colorPriceOrderDisplay.innerHTML = colorDescriptions[selectedColorElement.classList[0]].name;
-
+    colorPriceOrderDisplay.innerHTML = colorDescription[selectedColorElement.classList[0]].name;
+    wheelsPriceOrderDisplay.innerHTML = wheelsDescription[selectedWheelsElement.childNodes[0].classList[0]].name;
 }
 
 closeButton.onclick = function () {
